@@ -83,7 +83,7 @@ document.documentElement.dir = localStorage.getItem("dir") || "ltr";
   <form class="card" id="form-auth">
     <h1 id="auth-title">Sign in</h1>
     <input name="e" type="email" placeholder="Email" required autocomplete="email">
-    <input name="u" id="auth-u" class="hidden" placeholder="Username (shown in chat)" maxlength="20">
+    <input name="u" id="auth-u" autocomplete="username" class="hidden" placeholder="Username (shown in chat)" maxlength="20">
     <input name="p" type="password" placeholder="Password (min 6)" required minlength="6" autocomplete="current-password">
     <p class="error" id="auth-err"></p>
     <button class="btn primary" id="auth-btn">Sign in</button>
@@ -129,8 +129,8 @@ document.documentElement.dir = localStorage.getItem("dir") || "ltr";
 <dialog id="dlg-create">
   <form class="card" id="form-create">
     <h2>New group</h2>
-    <input name="name" placeholder="Group name" required maxlength="80">
-    <input name="description" placeholder="Description (optional)" maxlength="300">
+    <input autocomplete="off" name="name" placeholder="Group name" required maxlength="80">
+    <input autocomplete="off" name="description" placeholder="Description (optional)" maxlength="300">
     <p class="error" id="create-err"></p>
     <div class="row end">
       <button type="button" class="btn" data-close>Cancel</button>
@@ -171,8 +171,8 @@ document.documentElement.dir = localStorage.getItem("dir") || "ltr";
       <hr>
       <h3>Admin</h3>
       <form id="form-regen" class="stack">
-        <input name="hours" type="number" min="1" placeholder="Key expires after (hours, optional)">
-        <input name="max_uses" type="number" min="1" placeholder="Max uses (optional)">
+        <input autocomplete="off" name="hours" type="number" min="1" placeholder="Key expires after (hours, optional)">
+        <input autocomplete="off" name="max_uses" type="number" min="1" placeholder="Max uses (optional)">
         <button class="btn">Generate new key</button>
       </form>
       <div class="keybox hidden" id="new-key"></div>
